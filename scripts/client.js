@@ -41,11 +41,12 @@ const main = async () => {
   });
 
   try {
+    const params = new URLSearchParams(window.location.search)
     // Initialize the Voxeet SDK
     // WARNING: It is best practice to use the VoxeetSDK.initializeToken function to initialize the SDK.
     // Please read the documentation at:
     // https://dolby.io/developers/interactivity-apis/client-sdk/initializing
-    VoxeetSDK.initializeToken("eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJWb3hlZXQiLCJzdWIiOiJwYWVaWUVxX2hoMlVvUzlnQTVQOEZRPT0iLCJpYXQiOjE2MjU0NjQ4ODEsImV4cCI6MTYyNTQ2ODQ4MSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9DVVNUT01FUiJdLCJzY29wZSI6InNlc3Npb24ifQ.tyE82HRAIaBFe9XijthmmOWO7WEATGxov9B_UGHaoBGmatBHzYSsHC7SXOx7tP6h0svFKzDllQo5vObHb3N8Bw");
+    VoxeetSDK.initializeToken(params.get('token'));
 
     // Open a session for the user
     await VoxeetSDK.session.open({ name: randomName });
