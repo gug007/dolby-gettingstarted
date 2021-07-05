@@ -49,6 +49,7 @@ const initUI = () => {
         // 2. Join the conference
         VoxeetSDK.conference.join(conference, joinOptions)
           .then((conf) => {
+            console.log('conf', conf);
             lblDolbyVoice.innerHTML = `Dolby Voice is ${conf.params.dolbyVoice ? 'On' : 'Off'}.`;
 
             conferenceAliasInput.disabled = true;
