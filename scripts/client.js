@@ -47,7 +47,7 @@ const main = async () => {
     // Please read the documentation at:
     // https://dolby.io/developers/interactivity-apis/client-sdk/initializing
     VoxeetSDK.initializeToken(params.get('token'));
-
+    console.log('token', params.get('token'))
     // Open a session for the user
     await VoxeetSDK.session.open({ name: randomName });
 
